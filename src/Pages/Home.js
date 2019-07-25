@@ -1,12 +1,8 @@
-
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import fire from './fire';
-import Login from './Pages/Login'
-import Home from './Pages/Home'
-import ButtonAppBar from './Components/ButtonAppBar'
+import fire from '../fire';
+import ButtonAppBar from '../Components/ButtonAppBar'
 
-class App extends Component {
+class Home extends Component {
   constructor(props) {
     super(props);
     this.state = { messages: [] }; // <- set up react state
@@ -28,13 +24,20 @@ class App extends Component {
   }
   render() {
     return (
-      <Router>
-        <ButtonAppBar/>
-       <Route path='/' exact component={Home}/>
-       <Route path='/login' component={Login}/>
-      </Router>
+      <div>
+          Home
+       <form onSubmit={this.addMessage.bind(this)}>
+        <input type="text" ref={ el => this.inputEl = el }/>
+        <input type="submit"/>
+        <ul>
+          { /* Render the list of messages */
+            this.state.messages.map( message => <li key={message.id}>{message.text}</li> )
+          }
+        </ul>
+      </form>
+      </div>
     );
   }
 }
 
-export default App;
+export default Home;
