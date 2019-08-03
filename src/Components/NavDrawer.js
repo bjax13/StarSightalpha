@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import List from '@material-ui/core/List';
@@ -19,12 +20,15 @@ const useStyles = makeStyles({
 const menuItems = fromJS([
   {
       name: 'Home',
+      link: '/',
       icon: <HomeIcon />,
   },{
     name: 'Colors',
+    link: 'colors',
     icon: <GraidientIcon />,
   },{
     name: 'Login',
+    link: 'login',
     icon: <TransitEnterexitIcon />,
   },
 ]);
@@ -41,7 +45,7 @@ export default function NavDrawer(toggleDrawer, menuStatus) {
     >
       <List>
         {menuItems.map((menuItem, index) => (
-          <ListItem button key={menuItem.get('name')}>
+          <ListItem button component={Link} to={menuItem.get('link')} key={menuItem.get('name')}>
             <ListItemIcon>{menuItem.get('icon').toJS()}</ListItemIcon>
             <ListItemText primary={menuItem.get('name')} />
           </ListItem>
