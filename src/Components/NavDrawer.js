@@ -19,9 +19,9 @@ const useStyles = makeStyles({
 
 const menuItems = fromJS([
   {
-      name: 'Home',
-      link: '/',
-      icon: <HomeIcon />,
+    name: 'Home',
+    link: '/',
+    icon: <HomeIcon />,
   },{
     name: 'Colors',
     link: 'colors',
