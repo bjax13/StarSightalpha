@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { Link } from 'react-router-dom';
+import NavDrawer from './NavDrawer';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -24,19 +25,34 @@ const useStyles = makeStyles(theme => ({
 
 export default function ButtonAppBar() {
     const classes = useStyles();
+    const [state, setState] = React.useState({
+        menu: false,
+      });
+    
+    const toggleDrawer = (open) => event => {
+    if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+        return;
+    }
+
+    setState({
+        ...state,
+        menu: open,
+        pathname: window.location.pathname,
+        });
+    };
   
     return (
       <div className={classes.root}>
         <AppBar position="static">
+          {NavDrawer(toggleDrawer, state.menu)}
           <Toolbar>
-            <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="Menu">
-              <MenuIcon />
+            <IconButton  onClick={toggleDrawer(!state.menu)} edge="start" className={classes.menuButton} color="inherit" aria-label="Menu">
+                <MenuIcon/>
             </IconButton>
             <Typography variant="h6" className={classes.title}>
-              <Link to=''>Home</Link>
-              <Link to='login'>Login</Link>
+              {(state.pathname === '/') ? 'Home' :  state.pathname}
             </Typography>
-            <Button color="inherit">Login</Button>
+            <Button component={Link} to='login' color="inherit">Login</Button>
           </Toolbar>
         </AppBar>
       </div>

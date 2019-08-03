@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import fire from '../fire';
-import ButtonAppBar from '../Components/ButtonAppBar'
 
 class Home extends Component {
   constructor(props) {
