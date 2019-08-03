@@ -8,7 +8,9 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+import GraidientIcon from '@material-ui/icons/Gradient';
 import HomeIcon from '@material-ui/icons/Home';
+import TransitEnterexitIcon from '@material-ui/icons/TransitEnterexit';
 import { fromJS } from 'immutable';
 
 const useStyles = makeStyles({
@@ -17,16 +19,16 @@ const useStyles = makeStyles({
   },
 });
 
-const menuItems = fromJS(
-[{
+const menuItems = fromJS([
+  {
       name: 'Home',
       icon: <HomeIcon />,
   },{
-    name: 'Mail',
-    icon: <MailIcon />,
+    name: 'Colors',
+    icon: <GraidientIcon />,
   },{
-    name: 'Inbox',
-    icon: <InboxIcon />,
+    name: 'Login',
+    icon: <TransitEnterexitIcon />,
   },
 ]);
 
@@ -45,15 +47,6 @@ export default function NavDrawer(toggleDrawer, menuStatus) {
           <ListItem button key={menuItem.get('name')}>
             <ListItemIcon>{menuItem.get('icon').toJS()}</ListItemIcon>
             <ListItemText primary={menuItem.get('name')} />
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
           </ListItem>
         ))}
       </List>
