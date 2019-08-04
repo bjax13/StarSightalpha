@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Login from './Pages/Login'
 import Colors from './Pages/Colors'
 import Home from './Pages/Home'
+import NotFound from './Pages/NotFound'
 import ButtonAppBar from './Components/ButtonAppBar'
 
 class App extends Component {
@@ -12,6 +13,7 @@ class App extends Component {
       <Router>
         <ButtonAppBar/>
         <Route path='/' exact component={Home}/>
+        <Route path="*" component={NotFound} />
         <Route path='/login' component={Login}/>
         <Route path='/colors' component={Colors}/>
       </Router>
