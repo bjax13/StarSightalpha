@@ -117,12 +117,6 @@ const particalParams = {
  }
 }
 
-const CircleFill = styled.circle`
-  props => ({ fill: props.fill });
-`;
-const PathFill = styled.circle`
-  props => ({ fill: props.fill });
-`;
 const ButtonHome = styled.button`
   background: none;
   color: #fff;
@@ -149,10 +143,11 @@ const ButtonHome = styled.button`
   }
 `;
 const PermissionDenied = styled.div`
-  width: 100%;
-  height: 100%;
-  margin: 0px !important;
-  background: #24344c !important;
+  width: 100vw;
+  height: 100vh;
+  display: inline-block;
+  margin: 0px;
+  background: #24344c;
 
   a {
     text-decoration: none;
@@ -227,14 +222,17 @@ const PermissionDeniedWrapper = styled.div`
 `;
 
 const ParticlesStyled = styled(Particles)`
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
+  display: inline-block;
   margin: 0px !important;
   position: fixed !important;
   opacity: 0.23;
 `;
 
 const Body = styled.div`
+  @import url("https://fonts.googleapis.com/css?family=Dosis:300,400,700,800");
+
   .st1{fill:#504E55;}
   .st2{fill:#F39E72;}
   .st3{fill:#FFFFFF;}
@@ -251,8 +249,6 @@ const Body = styled.div`
   .st18{fill:#53515A;}
   .st19{opacity:0.42;}
   .st20{fill:#53515B;
-
-  //@import url("https://fonts.googleapis.com/css?family=Dosis:300,400,700,800");
 
   @keyframes sparkle {
     0% {
