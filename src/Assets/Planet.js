@@ -1,10 +1,4 @@
 import React, { Component } from 'react';
-import styled from '@emotion/styled';
-
-const CircleFill = styled.circle`
-  props => ({ fill: props.fill });
-`;
-
 
 class Planet extends Component {
 

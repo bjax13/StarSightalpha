@@ -4,13 +4,57 @@ import styled from '@emotion/styled';
 const CircleFill = styled.circle`
   props => ({ fill: props.fill });
 `;
+const Astro = styled.svg`
+  {
+    width: 43px;
+    position: absolute;
+    right: 20px;
+    top: 210px;
+    animation: spin 4.5s infinite linear;
+  }
+
+  .st2{fill:#F39E72;}
+  .st3{fill:#FFFFFF;}
+  .st4{opacity:0.24;}
+  .st5{fill:#77574E;}
+  .st6{fill:#FBD68D;}
+  .st9{fill:#CFC9E5;}
+  .st10{opacity:0.28;}
+  .st11{opacity:0.25;}
+  .st12{fill:#6F635C;}
+  .st13{fill:#DAE7BE;}
+  .st15{fill:#5F5E60;}
+  .st17{fill:#EBE9F5;}
+  .st18{fill:#53515A;}
+  .st19{opacity:0.42;}
+  .st20{fill:#53515B;}
+
+  @keyframes sparkle {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.3;
+    }
+  }
+  
+
+  @keyframes spin {
+    0% {
+      transform: rotateZ(0deg);
+    }
+    100% {
+      transform: rotateZ(360deg);
+    }
+  }
+`;
 
 
 class Astronaut extends Component {
 
   render() {
     return (
-      <svg class="astronaut" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      <Astro class="astronaut" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
         <CircleFill cx="256.8" cy="255.3" r="247.9" fill='none'/>
         <path d="M346.4 475H164.9V244.8c0-14 11.4-25.4 25.4-25.4H321c14 0 25.4 11.4 25.4 25.4V475z" class="st2"/>
         <path d="M346.4 470H165l5 5V349.9v-80-21.4c0-10.3 3.9-20.3 15-23.3 6.4-1.8 14.2-.7 20.7-.7h112.4c3.3 0 6.5 0 9.7 1.1 8.3 2.9 13.5 10.7 13.7 19.3.1 4.1 0 8.3 0 12.5v217.7c0 6.4 10 6.4 10 0v-130-79.5-19.1c-.1-13.8-7.6-26-21-30.5-7.2-2.4-15.8-1.5-23.3-1.5H192.9c-14.8 0-28.7 8.4-32 23.6-1.1 5.2-.8 10.8-.8 16.1V475c0 2.7 2.3 5 5 5h181.4c6.3 0 6.3-10-.1-10z" class="st1"/>
@@ -62,7 +106,7 @@ class Astronaut extends Component {
           <path d="M249.5 465v1c.6 8.8 1.5 7.2-8.3 7.1h-7.8c1.5-1.9 1.8-2.4 1.8-5.1v-1.1c0-14.1-5.3-26.9-13.7-36.2-5.5-6-12.3-10.3-19.8-12.7.8 0 1.6.1 2.4.1 13.1.8 26.6 5.6 34.7 14.2 8.1 8.6 10.7 19.9 10.7 32.7z" class="st5"/>
         </g>
 
-      </svg>
+      </Astro>
     );
   }
 }

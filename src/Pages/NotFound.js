@@ -231,49 +231,6 @@ const ParticlesStyled = styled(Particles)`
 const Body = styled.div`
   @import url("https://fonts.googleapis.com/css?family=Dosis:300,400,700,800");
 
-  .st1{fill:#504E55;}
-  .st2{fill:#F39E72;}
-  .st3{fill:#FFFFFF;}
-  .st4{opacity:0.24;}
-  .st5{fill:#77574E;}
-  .st6{fill:#FBD68D;}
-  .st9{fill:#CFC9E5;}
-  .st10{opacity:0.28;}
-  .st11{opacity:0.25;}
-  .st12{fill:#6F635C;}
-  .st13{fill:#DAE7BE;}
-  .st15{fill:#5F5E60;}
-  .st17{fill:#EBE9F5;}
-  .st18{fill:#53515A;}
-  .st19{opacity:0.42;}
-  .st20{fill:#53515B;
-
-  @keyframes sparkle {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0.3;
-    }
-  }
-
-  .astronaut {
-    width: 43px;
-    position: absolute;
-    right: 20px;
-    top: 210px;
-    animation: spin 4.5s infinite linear;
-  }
-
-  @keyframes spin {
-    0% {
-      transform: rotateZ(0deg);
-    }
-    100% {
-      transform: rotateZ(360deg);
-    }
-  }
-
   .saturn,
   .saturn-2,
   .hover {
