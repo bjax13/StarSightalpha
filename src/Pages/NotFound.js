@@ -140,6 +140,7 @@ const ButtonHome = styled.button`
     opacity: 1;
   }
 `;
+
 const PermissionDenied = styled.div`
   width: 100vw;
   height: 100vh;
@@ -209,6 +210,7 @@ const PermissionDenied = styled.div`
     }
   }
 `;
+
 const PermissionDeniedWrapper = styled.div`
   max-width: 390px;
   width: 100%;
@@ -228,23 +230,9 @@ const ParticlesStyled = styled(Particles)`
   opacity: 0.23;
 `;
 
+
 const Body = styled.div`
   @import url("https://fonts.googleapis.com/css?family=Dosis:300,400,700,800");
-
-  .saturn,
-  .saturn-2,
-  .hover {
-    animation: hover 2s infinite ease-in-out alternate;
-  }
-
-  @keyframes hover {
-    0% {
-      transform: translateY(3px);
-    }
-    100% {
-      transform: translateY(-3px);
-    }
-  }
 `
 
 class NotFound extends Component {
@@ -260,7 +248,7 @@ class NotFound extends Component {
               Hmm, looks like that page doesn't exist.</h3>
             <Astronaut/>
             <Planet/>
-            <a href="/"><ButtonHome class="denied__link">Go Home</ButtonHome></a>
+            <a href="/"><ButtonHome>Go Home</ButtonHome></a>
           </PermissionDeniedWrapper>
         </PermissionDenied>
       </Body >
